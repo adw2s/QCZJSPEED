@@ -526,6 +526,7 @@ if ($request &&$request.body.indexOf("_appid=car")>=0 ){
 	}
     } 
 //提现
+/*
 if ($request && $request.url.indexOf("cointowallet") >= 0&&$request.body.indexOf("pm=1")>=0) {
     const cointowalletbodyVal = $request.body;
     if (cointowalletbodyVal) $.setdata(cointowalletbodyVal, "cointowalletbody" + $.idx);
@@ -534,6 +535,7 @@ if ($request && $request.url.indexOf("cointowallet") >= 0&&$request.body.indexOf
     );
     $.msg($.name + $.idx, `获取提现body: 成功🎉`, ``);
     } 
+*/
 }
 
 
@@ -576,7 +578,7 @@ if (!GetUserInfourlArr[0]) {
   addCoin2bodyVal = addCoin2bodyArr[i];
   reportAssheaderVal = reportAssheaderArr[i];
   reportAssbodyVal = reportAssbodyArr[i];	  
-  cointowalletbodyVal = cointowalletbodyArr[i];
+  //cointowalletbodyVal = cointowalletbodyArr[i];
       await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`) 
       await GetUserInfo();     
       await coin();
@@ -884,6 +886,7 @@ if($.reportAss.data==0)
   })
 }
 //提现
+/*
 function cointowallet(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
@@ -908,6 +911,7 @@ if($.cointowallet.returncode==0)
     },timeout)
   })
 }
+*/
 
 //通知
 function msgShow() {
