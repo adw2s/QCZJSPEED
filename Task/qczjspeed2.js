@@ -376,8 +376,7 @@ if ($.isNode()) {
     if (middlecointowalletBODY[item]) {
       cointowalletbodyArr.push(middlecointowalletBODY[item]);
     }
-    */
-  });
+  });*/
 } else {	
   GetUserInfourlArr.push($.getdata("GetUserInfourl"));	
   GetUserInfoheaderArr.push($.getdata("GetUserInfoheader"));  
