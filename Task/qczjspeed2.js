@@ -123,7 +123,7 @@ let COOKIES_SPLIT = "\n"; // 自定义多cookie之间连接的分隔符，默认
 
 const logs = 0; // 0为关闭日志，1为开启
 const notifyInterval = 1;// 0为关闭通知，1为所有通知，
-const cointowalletid = 0.5;//提现金额
+//const cointowalletid = 0.5;//提现金额
 const ins = $.getval('qczjIns'); // ⚠️0不获取，1获取惊喜福利body，2获取视频body,3获取福利视频body,4获取福利body
 
 let gksp,flsp,lqfl;
@@ -168,9 +168,9 @@ const reportAssheaderArr = [];
 let reportAssheaderVal = "";
 let middlereportAssBODY = [];
 let middlereportAssHEADER = [];
-const cointowalletbodyArr = [];
-let cointowalletbodyVal = "";
-let middlecointowalletBODY = [];
+//const cointowalletbodyArr = [];
+//let cointowalletbodyVal = "";
+//let middlecointowalletBODY = [];
 
 
 
@@ -292,7 +292,8 @@ if ($.isNode()) {
     middlereportAssBODY = process.env.QCZJ_reportAssBODY.split(COOKIES_SPLIT);
   } else {
     middlereportAssBODY = process.env.QCZJ_reportAssBODY.split();
-  }   
+  } 
+/*
     if (
     process.env.QCZJ_cointowalletBODY &&
     process.env.QCZJ_cointowalletBODY.indexOf(COOKIES_SPLIT) > -1
@@ -301,6 +302,7 @@ if ($.isNode()) {
   } else {
     middlecointowalletBODY = process.env.QCZJ_cointowalletBODY.split();
   } 
+  */
 }
 
 if ($.isNode()) {
@@ -369,10 +371,12 @@ if ($.isNode()) {
       reportAssheaderArr.push(middlereportAssHEADER[item]);
     }
   });
+	/*
   Object.keys(middlecointowalletBODY).forEach((item) => {
     if (middlecointowalletBODY[item]) {
       cointowalletbodyArr.push(middlecointowalletBODY[item]);
     }
+    */
   });
 } else {	
   GetUserInfourlArr.push($.getdata("GetUserInfourl"));	
@@ -388,7 +392,7 @@ if ($.isNode()) {
   addCoin2bodyArr.push($.getdata("addCoin2body"));    
   reportAssbodyArr.push($.getdata("reportAssbody")); 
   reportAssheaderArr.push($.getdata("reportAssheader"));  
-  cointowalletbodyArr.push($.getdata("cointowalletbody"));
+  //cointowalletbodyArr.push($.getdata("cointowalletbody"));
   // 根据boxjs中设置的额外账号数，添加存在的账号数据进行任务处理
   let qczjCount = ($.getval('qczjCount') || '1') - 0;
   for (let i = 2; i <= qczjCount; i++) {
@@ -406,7 +410,7 @@ if ($.isNode()) {
   addCoin2bodyArr.push($.getdata(`addCoin2body${i}`));    
   reportAssbodyArr.push($.getdata(`reportAssbody${i}`)); 
   reportAssheaderArr.push($.getdata(`reportAssheader${i}`));  
-  cointowalletbodyArr.push($.getdata(`cointowalletbody${i}`));
+  //cointowalletbodyArr.push($.getdata(`cointowalletbody${i}`));
     }
   }
 }
