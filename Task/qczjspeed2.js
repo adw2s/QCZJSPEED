@@ -591,7 +591,7 @@ if (!GetUserInfourlArr[0]) {
       await addCoin();
       await addCoin2();
       await reportAss();
-      await cointowallet();
+      //await cointowallet();
       
   }
 }
