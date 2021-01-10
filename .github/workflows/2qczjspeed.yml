@@ -15,20 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        QCZJ_GetUserInfoURL: ${{ secrets.2QCZJ_GetUserInfoURL }}
-        QCZJ_GetUserInfoHEADER: ${{ secrets.2QCZJ_GetUserInfoHEADER }}
-        QCZJ_coinBODY: ${{ secrets.2QCZJ_coinBODY }}
-        QCZJ_taskBODY: ${{ secrets.2QCZJ_taskBODY }}		
-        QCZJ_activityBODY: ${{ secrets.2QCZJ_activityBODY }}	
-        QCZJ_GoldcoinBODY: ${{ secrets.2QCZJ_GoldcoinBODY }}	
-        QCZJ_videoBODY: ${{ secrets.2QCZJ_videoBODY }}	        
-        QCZJ_WelfarevideoBODY: ${{ secrets.2QCZJ_WelfarevideoBODY }}	
-        QCZJ_WelfareBODY: ${{ secrets.2QCZJ_WelfareBODY }}	
-        QCZJ_addCoinBODY: ${{ secrets.2QCZJ_addCoinBODY }}
-        QCZJ_addCoin2BODY: ${{ secrets.2QCZJ_addCoin2BODY }}
-        QCZJ_reportAssHEADER: ${{ secrets.2QCZJ_reportAssHEADER }}
-        QCZJ_reportAssBODY: ${{ secrets.2QCZJ_reportAssBODY }}
-        QCZJ_cointowalletBODY: ${{ secrets.2QCZJ_cointowalletBODY }}
+        QCZJ_GetUserInfoURL: ${{ secrets.QCZJ_GetUserInfoURL2 }}
+        QCZJ_GetUserInfoHEADER: ${{ secrets.QCZJ_GetUserInfoHEADER2 }}
+        QCZJ_coinBODY: ${{ secrets.QCZJ_coinBODY2 }}
+        QCZJ_taskBODY: ${{ secrets.QCZJ_taskBODY2 }}		
+        QCZJ_activityBODY: ${{ secrets.QCZJ_activityBODY2 }}	
+        QCZJ_GoldcoinBODY: ${{ secrets.QCZJ_GoldcoinBODY2 }}	
+        QCZJ_videoBODY: ${{ secrets.QCZJ_videoBODY2 }}	        
+        QCZJ_WelfarevideoBODY: ${{ secrets.QCZJ_WelfarevideoBODY2 }}	
+        QCZJ_WelfareBODY: ${{ secrets.QCZJ_WelfareBODY2 }}	
+        QCZJ_addCoinBODY: ${{ secrets.QCZJ_addCoinBODY2 }}
+        QCZJ_addCoin2BODY: ${{ secrets.QCZJ_addCoin2BODY2 }}
+        QCZJ_reportAssHEADER: ${{ secrets.QCZJ_reportAssHEADER2 }}
+        QCZJ_reportAssBODY: ${{ secrets.QCZJ_reportAssBODY2 }}
+        QCZJ_cointowalletBODY: ${{ secrets.QCZJ_cointowalletBODY2 }}
          
     steps:
       - name: Checkout
