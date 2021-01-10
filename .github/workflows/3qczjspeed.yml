@@ -1,0 +1,61 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: 3汽车之家极速版
+
+on:
+  workflow_dispatch:
+  schedule:
+     - cron: '29 0-15 * * *'
+  watch:
+    types: started
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        QCZJ_GetUserInfoURL: ${{ secrets.QCZJ_GetUserInfoURL3 }}
+        QCZJ_GetUserInfoHEADER: ${{ secrets.QCZJ_GetUserInfoHEADER3 }}
+        QCZJ_coinBODY: ${{ secrets.QCZJ_coinBODY3 }}
+        QCZJ_taskBODY: ${{ secrets.QCZJ_taskBODY3 }}		
+        QCZJ_activityBODY: ${{ secrets.QCZJ_activityBODY3 }}	
+        QCZJ_GoldcoinBODY: ${{ secrets.QCZJ_GoldcoinBODY3 }}	
+        QCZJ_videoBODY: ${{ secrets.QCZJ_videoBODY3 }}	        
+        QCZJ_WelfarevideoBODY: ${{ secrets.QCZJ_WelfarevideoBODY3 }}	
+        QCZJ_WelfareBODY: ${{ secrets.QCZJ_WelfareBODY3 }}	
+        QCZJ_addCoinBODY: ${{ secrets.QCZJ_addCoinBODY3 }}
+        QCZJ_addCoin2BODY: ${{ secrets.QCZJ_addCoin2BODY3 }}
+        QCZJ_reportAssHEADER: ${{ secrets.QCZJ_reportAssHEADER3 }}
+        QCZJ_reportAssBODY: ${{ secrets.QCZJ_reportAssBODY3 }}
+        QCZJ_cointowalletBODY: ${{ secrets.QCZJ_cointowalletBODY3 }}
+         
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/ziye12/QCZJSPEED.git ~/QCZJSPEED
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: npm install
+        if: env.QCZJ_GetUserInfoURL
+        run: |
+          cd ~/QCZJSPEED
+          npm install
+      - name: '运行 【3汽车之家极速版】'
+        if: env.QCZJ_GetUserInfoURL
+        run: |
+          cd ~/QCZJSPEED
+          node Task/qczjspeed.js
+        env:
+          
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND }}
+          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+
+    
